@@ -17,6 +17,7 @@ function format(
     console.info(
       '[FORMAT BALANCE]',
       String(balance),
+      typeof(balance),
       decimals,
       String(res)
     )
@@ -26,6 +27,7 @@ function format(
       '[FORMAT BALANCE]',
       e.message,
       String(balance),
+      typeof(balance),
       decimals
     )
     return ''
