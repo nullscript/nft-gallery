@@ -8,28 +8,25 @@ function format(
   withSi?: boolean
 ) {
   try {
-    console.info(
-      '[FORMAT BALANCE]',
-      "success",
-      String(balance),
-      typeof balance,
-      decimals,
-      withUnit
-    )
-    return formatBalance(balance, {
+    var res = formatBalance(balance, {
       decimals,
       withUnit,
       forceUnit: '-',
       withSi,
     })
+    console.info(
+      '[FORMAT BALANCE]',
+      String(balance),
+      decimals,
+      String(res)
+    )
+    return res
   } catch (e: any) {
     console.warn(
       '[FORMAT BALANCE]',
       e.message,
       String(balance),
-      typeof balance,
-      decimals,
-      withUnit
+      decimals
     )
     return ''
   }
